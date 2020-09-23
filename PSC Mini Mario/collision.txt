@@ -1,0 +1,19 @@
+Sub CollisionDetection()
+  On Error Resume Next
+  
+  'Y-Ordinate
+  
+  If Level(BlockX + (OffsetX + MarioX) \ TileWidth, (MarioY + MarioHeight + dY) \ TileHeight) <> 255 Then dY = 0
+  If Level(BlockX + (OffsetX + MarioX + MarioWidth) \ TileWidth, (MarioY + MarioHeight + dY) \ TileHeight) <> 255 Then dY = 0
+  If Level(BlockX + (OffsetX + MarioX) \ TileWidth, (MarioY + dY) \ TileHeight) <> 255 Then dY = 0
+  If Level(BlockX + (OffsetX + MarioX + MarioWidth) \ TileWidth, (MarioY + dY) \ TileHeight) <> 255 Then dY = 0
+  
+  'X-Ordinate
+  If Level(BlockX + (OffsetX + MarioX + dX) \ TileWidth, (MarioY + MarioHeight) \ TileHeight) <> 255 Then dX = 0
+  If Level(BlockX + (OffsetX + MarioX + MarioWidth + dX) \ TileWidth, (MarioY + MarioHeight) \ TileHeight) <> 255 Then dX = 0
+  If Level(BlockX + (OffsetX + MarioX + dX) \ TileWidth, (MarioY + MarioHeight / 2) \ TileHeight) <> 255 Then dX = 0
+  If Level(BlockX + (OffsetX + MarioX + MarioWidth + dX) \ TileWidth, (MarioY + MarioHeight / 2) \ TileHeight) <> 255 Then dX = 0
+  If Level(BlockX + (OffsetX + MarioX + dX) \ TileWidth, MarioY \ TileHeight) <> 255 Then dX = 0
+  If Level(BlockX + (OffsetX + MarioX + MarioWidth + dX) \ TileWidth, MarioY \ TileHeight) <> 255 Then dX = 0
+  
+End Sub
